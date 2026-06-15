@@ -4,7 +4,7 @@ O Projeto Resgate de Vidas é uma organização social nascida em junho de 2020,
 
 A ONG atua nas áreas de **evangelização, alimentação e educação**, atendendo atualmente cerca de 260 crianças cadastradas, com uma média diária de 40 a 80 atendimentos. O público atendido tem entre 2 e 14 anos, e as atividades acontecem todos os dias, de segunda a domingo, das 09h30 às 15h30.
 
-Além de cuidar das crianças, o projeto também oferece suporte às famílias, incluindo acompanhamento psicológico. A igreja Assembleia de Deus Ministério Verbo Vivo, onde o projeto nasceu, contribui com o suporte espiritual, fortalecendo valores e oferecendo दिशा e esperança.
+Além de cuidar das crianças, o projeto também oferece suporte às famílias, incluindo acompanhamento psicológico. A igreja Assembleia de Deus Ministério Verbo Vivo, onde o projeto nasceu, contribui com o suporte espiritual, fortalecendo valores e oferecendo amor e esperança.
 
 Entre as principais atividades desenvolvidas estão:
 
