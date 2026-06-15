@@ -36,3 +36,5 @@ Bright Future Foundation (EUA)
 Zelle: +1 (415) 299-7545
 
 Se envolver com o Projeto Resgate de Vidas é mais do que ajudar — é participar ativamente da transformação de vidas.
+
+ Desenvolvido por GALMe.
