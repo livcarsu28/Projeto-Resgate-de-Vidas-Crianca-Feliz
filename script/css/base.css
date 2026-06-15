@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 100px;
+    --focus-color: #FFD700;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Define um respiro global para âncoras (links do menu) */
+    scroll-padding-top: var(--header-height);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+ACESSIBILIDADE E FOCO
+   ========================================================================== */
+
+/* Remove o contorno padrão do navegador para cliques de mouse */
+*:focus {
+    outline: none;
+}
+
+/* Aplica o destaque dourado apenas na navegação por teclado */
+*:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 4px;
+}
+
+/* MARGENS DE SCROLL 
+Garante que, ao focar ou clicar em um link, o conteúdo não fique sob o header fixo.
+*/
+section, 
+.slider, 
+[tabindex="0"], 
+a, button, input, textarea {
+    scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+/* Alvo do Skip Link (Pulo de conteúdo) não precisa de margem extra */
+#conteudo-principal {
+    scroll-margin-top: var(--header-height);
+    outline: none;
+}
+
+/* Imagens da galeria com margem maior para centralizar melhor no foco */
+.grid-galeria img {
+    scroll-margin-top: calc(var(--header-height) + 50px);
+}
+
+/* ==========================================================================
+UTILITÁRIOS E SKIP LINK
+   ========================================================================== */
+
+/* Esconde elementos visualmente mas mantém para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Link de acessibilidade que aparece apenas no Tab */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--focus-color);
+    color: #7b0404;
+    padding: 12px 20px;
+    z-index: 3000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 8px 0;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus-visible {
+    top: 0;
+}

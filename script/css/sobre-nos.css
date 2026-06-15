@@ -1,0 +1,51 @@
+.sobre-nos-container {
+    width: 100%;
+    min-height: 80vh;
+    padding: 80px 10%;
+    background-image: url('../../img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Removido o text-align: left daqui pois já está no .content */
+}
+
+.sobre-nos-container .content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    color: #fff; /* Define a cor para tudo que estiver aqui dentro */
+    text-align: left;
+}
+
+.sobre-nos-container h2 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+}
+
+.sobre-nos-container .descricao { 
+    font-size: 1.2rem; 
+    line-height: 1.8; 
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .sobre-nos-container { 
+        padding: 60px 5%; 
+        min-height: auto; /* No mobile, deixa a altura se ajustar ao conteúdo */
+    }
+    
+    .sobre-nos-container .content {
+        padding: 25px; /* Reduz um pouco o respiro interno no mobile */
+    }
+
+    .sobre-nos-container h2 { 
+        font-size: 2rem; 
+    }
+    
+    .sobre-nos-container .descricao { 
+        font-size: 1rem; 
+    }
+}

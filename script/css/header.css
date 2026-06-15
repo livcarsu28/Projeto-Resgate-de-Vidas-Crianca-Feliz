@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Configurações Gerais do Header
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #7b0404;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura de 100% */
+}
+
+/* ==========================================================================
+Logo e Identidade
+   ========================================================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    height: 65px; /* Ajuste conforme a necessidade da logo */
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    
+    justify-content: center;
+    color: white;
+    line-height: 1.1;
+    transform: translateY(-5px); /* <-- ALTERAÇÃO AQUI: Move o texto para cima */
+    font-family: Goudy;
+}
+
+.logo-text h1 {
+    margin: 0;
+}
+
+.logo-text .titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logo-text .subtitulo {
+    font-size: 1.0rem;
+    font-weight: 400;
+    opacity: 0.9; 
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Navegação Desktop
+   ========================================================================== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px; /* Substitui o margin-left nos LIs, criando espaçamento igual */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito hover para os links comuns (exclui o botão de doar) */
+.nav-links a:not(.btn-doar):hover { 
+    border-bottom: 2px solid white; 
+}
+
+/* Estilo específico para o Botão de Doação */
+.btn-doar {
+    border: 2px solid white !important;
+    border-radius: 30px;
+    padding: 8px 20px !important;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.btn-doar:hover {
+    background-color: white;
+    color: #7b0404 !important;
+}
+
+/* ==========================================================================
+   Botão Hamburguer
+   ========================================================================== */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.line {
+    width: 30px; 
+    height: 3px;
+    background-color: white;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Responsividade (Mobile)
+   ========================================================================== */
+@media (max-width: 950px) { /* Breakpoint um pouco maior para acomodar todos os itens */
+    .logo img {
+        height: 60px; 
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Menu Lateral/Dropdown */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        
+        /* Efeito Vidro Fosco (Frosted Glass) */
+        background-color: rgba(123, 4, 4, 0.95); 
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        border-radius: 0 0 25px 25px; /* Arredonda as pontas de baixo */
+        
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animação mais suave */
+    }
+
+    .nav-menu.active {
+        max-height: 600px; /* Aumentado um pouco para caber os itens todos confortavelmente */
+    }
+
+    .nav-links { 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 20px 30px 40px 30px; /* Espaçamento interno */
+        gap: 0; /* Removemos o gap para colocar linhas divisórias */
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória subtil */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none; /* O último item (botão) não tem linha */
+        margin-top: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1.15rem;
+        display: block;
+        padding: 18px 0; /* Maior área de clique para os dedos */
+        width: 100%;
+        letter-spacing: 0.5px;
+    }
+
+    /* Botão de Doação no Mobile (mais chamativo) */
+    .btn-doar {
+        background-color: white !important;
+        color: #7b0404 !important;
+        font-weight: 700;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        padding: 12px 0 !important;
+    }
+
+    /* Animação do Ícone Hamburguer virando X */
+    .hamburger.active .line:nth-child(1) { 
+        transform: translateY(10.5px) rotate(45deg); 
+    }
+    .hamburger.active .line:nth-child(2) { 
+        opacity: 0; 
+    }
+    .hamburger.active .line:nth-child(3) { 
+        transform: translateY(-10.5px) rotate(-45deg); 
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 1rem 4%;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .logo-text .titulo {
+        font-size: 1rem;
+    }
+    .logo-text .subtitulo {
+        font-size: 0.8rem;
+    }
+}

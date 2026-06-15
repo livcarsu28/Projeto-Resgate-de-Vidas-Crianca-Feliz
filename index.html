@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="script/css/base.css">
+    <link rel="stylesheet" href="script/css/header.css">
+    <link rel="stylesheet" href="script/css/slider.css">
+    <link rel="stylesheet" href="script/css/sobre-nos.css">
+    <link rel="stylesheet" href="script/css/galeria.css">
+    <link rel="stylesheet" href="script/css/atividades.css">
+    <link rel="stylesheet" href="script/css/nossa-historia.css">
+    <link rel="stylesheet" href="script/css/footer.css">
+    <link rel="stylesheet" href="script/css/apoiar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS do AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/nossa-historia.png" type="image/x-icon">
+    <title>Resgate de vidas - Criança feliz</title>
+</head>
+
+<body>
+
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <!--Cabeçalho-->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" class="btn-logo">
+                <img src="img/logo.png" alt="Logo ONG Resgate de Vidas"></a>
+            <a href="index.html"> <div class="logo-text">
+                <h1><span class="titulo">Resgate de vidas</span></h1>
+                <span class="subtitulo">criança feliz</span>
+            </div></a>
+        </div>
+
+        <!-- Botão de Menu -->
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <!-- Navegação Unificada -->
+        <nav id="secoes" class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#sobre-nos">Sobre nós</a></li>
+                <li><a href="#atividades">Atividades</a></li>
+                <li><a href="#nossa-historia">História</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#apoiar">Como apoiar</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <!-- Botão de doar na mesma lista -->
+                <li class="item-doar"><a href="doacao.html" class="btn-doar">Faça sua doação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="conteudo-principal" tabindex="-1" style="outline: none;"></div>
+
+        <div class="slider" aria-label="Destaques da ONG">
+    <div class="slides-wrapper">
+
+        <div class="slide">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/mobile1.png">
+                <img src="img/1.png" alt="Crianças brincando">
+            </picture>
+        </div>
+
+        <div class="slide">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/mobile2.jpeg">
+                <img src="img/2.png" alt="Distribuição de alimentos">
+            </picture>
+        </div>
+
+        <div class="slide">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/mobile3.png">
+                <img src="img/4.png" alt="Voluntários reunidos">
+            </picture>
+        </div>
+
+    </div>
+
+    <div class="slider-nav">
+        <button class="nav-dot active" aria-label="Slide 1"></button>
+        <button class="nav-dot" aria-label="Slide 2"></button>
+        <button class="nav-dot" aria-label="Slide 3"></button>
+    </div>
+</div>
+
+        <!-- Adicionado data-aos="fade-up" para animar a entrada -->
+        <section id="sobre-nos" class="sobre-nos-container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="content">
+                <h2 tabindex="0">Sobre nós</h2>
+                <p class="descricao">
+                    O Projeto Resgate de Vidas transforma a realidade de crianças e famílias em situação de
+                    vulnerabilidade, oferecendo muito mais do que ajuda — oferecendo cuidado, esperança e um novo
+                    caminho.<br><br>
+                    Diariamente, proporcionamos alimentação, apoio educacional, acompanhamento especializado e momentos
+                    de acolhimento, criando um ambiente seguro onde cada criança pode sonhar, crescer e se sentir
+                    amada.<br><br>
+                    Acreditamos que vidas podem ser restauradas e gerações transformadas — e que cada pessoa pode fazer
+                    parte dessa missão.
+                </p>
+            </div>
+        </section>
+
+        <!--Seção Atividades-->
+        <section class="atividades" id="atividades">
+            <h2 tabindex="0" class="atividades-titulo" data-aos="fade-up">NOSSAS ATIVIDADES</h2>
+
+            <div class="atividades-introducao" data-aos="fade-up">
+                <h3 class="atividades-subtitulo-principal">Como transformamos vidas</h3>
+                <p class="atividades-descricao-principal">Através do amor, cuidado e ensino</p>
+            </div>
+
+            <div class="atividades-container">
+                <div tabindex="0" class="atividade-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icone-circulo">
+                        <img src="img/elementos/biblia.png" alt="Ícone de Ensinos Bíblicos">
+                    </div>
+                    <h4 class="atividade-item-titulo">Ensinos Bíblicos</h4>
+                    <p class="atividade-item-texto">
+                        Compartilhamos valores cristãos através de estudos, discipulado, oração e momentos de comunhão.
+                    </p>
+
+                </div>
+
+                <div tabindex="0" class="atividade-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="icone-circulo">
+                        <img src="img/elementos/frutas.png" alt="Ícone de Refeições Solidárias">
+                    </div>
+                    <h4 class="atividade-item-titulo">Refeições Solidárias</h4>
+                    <p class="atividade-item-texto">
+                        Distribuímos refeições e cestas básicas para famílias em situação de vulnerabilidade.
+                    </p>
+
+                </div>
+
+                <div tabindex="0" class="atividade-item" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="icone-circulo">
+                        <img src="img/elementos/livros.png" alt="Ícone de Educação e Apoio Escolar">
+                    </div>
+                    <h4 class="atividade-item-titulo">Educação e Apoio Escolar</h4>
+                    <p class="atividade-item-texto">
+                        Oferecemos reforço escolar, oficinas e atividades educativas para crianças e adolescentes.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Nossa História -->
+        <section class="nossa-historia" id="nossa-historia">
+            <div class="historia-container">
+                <div class="historia-topo">
+                    <div class="historia-imagem" data-aos="fade-right">
+                        <img src="img/nossa-historia.png" alt="Ícone de união">
+                    </div>
+                    <div class="historia-texto" data-aos="fade-left">
+                        <h2 tabindex="0">NOSSA HISTÓRIA</h2>
+                        <p>Em junho de 2020, enquanto já atuávamos com a igreja AD Verbo Vivo, nos deparamos com uma
+                            cena
+                            que marcou o início de tudo: uma criança, em uma rua de terra, tentava "fazer um churrasco"
+                            com
+                            tijolos, galhos e pedras, em meio a uma realidade de extrema necessidade.</p>
+                        <p>Diante daquela situação, entendemos que não podíamos permanecer indiferentes. Foi ali,
+                            naquele
+                            momento, que nasceu o Projeto Resgate de Vidas — com o propósito de levar cuidado, dignidade
+                            e
+                            esperança a quem mais precisa.</p>
+                    </div>
+                </div>
+                <div class="historia-stats">
+                    <!-- Alterado de zoom-up (que não existe no AOS) para zoom-in-up -->
+                    <div class="stat-card" data-aos="zoom-in-up" data-aos-delay="200">
+                        <h3 tabindex="0">+250</h3>
+                        <p>Crianças cadastradas e ajudadas</p>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in-up" data-aos-delay="400">
+                        <h3 tabindex="0">6 ANOS</h3>
+                        <p>De história</p>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in-up" data-aos-delay="600">
+                        <h3 tabindex="0">8</h3>
+                        <p>Voluntários</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Seção Galeria-->
+        <section class="galeria-container" id="galeria">
+
+            <div class="galeria-header" data-aos="fade-up">
+                <div class="coracao-divisao">
+                    <span class="linha"></span>
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="linha"></span>
+                </div>
+                <h2 tabindex="0" class="galeria-titulo">NOSSAS CRIANÇAS</h2>
+                <p class="galeria-subtitulo">Sorrisos que nos inspiram todos os dias!</p>
+                <p class="galeria-descricao">
+                    Cada sorriso, cada conquista e cada abraço nos lembram do propósito do nosso trabalho: transformar
+                    vidas e construir um futuro melhor.
+                </p>
+            </div>
+
+            <!-- Botões de Filtro -->
+            <div class="galeria-filtros" data-aos="fade-up" data-aos-delay="100">
+                <button class="btn-filtro active" data-filter="atividades">
+                    <i class="fa-solid fa-people-roof"></i>
+                    Atividades
+                </button>
+
+                <button class="btn-filtro" data-filter="aprendizado">
+                    <i class="fa-solid fa-graduation-cap"></i> Aprendizado
+                </button>
+
+                <button class="btn-filtro" data-filter="alimentacao">
+                    <i class="fa-solid fa-bowl-food"></i> Alimentação
+                </button>
+
+                <button class="btn-filtro" data-filter="momentos">
+                    <i class="fa-solid fa-heart"></i> Momentos
+                </button>    
+            </div>
+
+            <!-- Grid da Galeria -->
+            <div class="grid-galeria-uniforme" id="galeriaGrid"></div>
+
+        </section>
+
+        <section class="como-apoiar" id="apoiar">
+            <div class="apoiar-container" data-aos="zoom-in" data-aos-duration="1000">
+                <h2 tabindex="0">COMO APOIAR</h2>
+                <p class="apoiar-intro" tabindex="0">
+                    A sua contribuição é o que mantém o nosso projeto vivo. Com o seu apoio, podemos continuar
+                    resgatando vidas e construindo um futuro melhor para centenas de crianças e famílias.
+                </p>
+
+                <div class="transparencia-box" tabindex="0" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Transparência: Para onde vai a sua doação?</h3>
+                    <p>Levamos a sério cada centavo doado. Seu investimento social é revertido diretamente para a
+                        manutenção e expansão das nossas atividades diárias:</p>
+                    <ul class="transparencia-lista">
+                        <li><strong>Alimentação:</strong> Compra de mantimentos para refeições diárias e montagem de
+                            cestas básicas para as famílias.</li>
+                        <li><strong>Educação e Cultura:</strong> Materiais didáticos, livros, instrumentos e recursos
+                            para as aulas.</li>
+                        <li><strong>Estrutura:</strong> Manutenção do nosso espaço físico para garantir um ambiente
+                            seguro e acolhedor.</li>
+                        <li><strong>Ações Sociais:</strong> Eventos comunitários, roupas, brinquedos e suporte
+                            emergencial de saúde.</li>
+                    </ul>
+                </div>
+
+                <div class="cta-doacao" data-aos="zoom-in" data-aos-delay="500">
+                    <a href="doacao.html" class="btn-doar-destaque">Quero Transformar Vidas</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--Seção do contato-->
+    <footer class="main-footer" id="contato">
+        <div class="footer-container" data-aos="fade-up">
+            <div class="footer-info">
+                <h2 tabindex="0" class="footer-title">FALE COM A GENTE!</h2>
+                <p class="footer-desc">Juntos levaremos oportunidades para milhares de vidas de crianças e suas
+                    famílias.</p>
+                <div class="yellow-bar"></div>
+
+                <div class="contact-details">
+                    <h3>LOCALIZADOS EM:</h3>
+                    <p>Rua Claudionor Belarminio Ferreira, 330 - Vila Mazzei - Itapetininga, SP - CEP: 18209510</p>
+
+                    <div class="contact-group">
+                        <p>Estados Unidos us<br>
+                            Bright Future Foundation<br>
+                            Zelle 415 2997545</p>
+
+                        <p>Whatsapp: (15) 98815-3462<br>
+                            resgatedevidasbr@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-form" data-aos="fade-left" data-aos-delay="200">
+                <form id="formWhatsapp">
+
+                    <input type="text" id="nome" placeholder="Nome completo" class="full-width" required>
+
+                    <div class="form-row">
+                        <input type="text" id="empresa" placeholder="Empresa">
+                        <input type="text" id="telefone" placeholder="Telefone">
+                    </div>
+
+                    <input type="email" id="email" placeholder="E-mail" class="full-width">
+
+                    <input type="text" id="assunto" placeholder="Assunto" class="full-width">
+
+                    <textarea id="mensagem" placeholder="Escreva aqui a sua mensagem" required></textarea>
+
+                    <button type="submit" class="btn-submit">
+                        Enviar mensagem
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="footer-map" data-aos="zoom-in" data-aos-delay="400">
+                <iframe title="Mapa de localização da sede em Itapetininga" width="100%" height="100%"
+                    style="border:0; min-height: 350px; border-radius: 8px;" loading="lazy" allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://maps.google.com/maps?q=Rua+Claudionor+Belarminio+Ferreira,+330+-+Vila+Mazzei+-+Itapetininga,+SP&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="Logo">
+                    <div class="logo-text-footer">
+                        <span class="logo-title">RESGATE DE VIDAS</span>
+                        <span class="logo-sub">CRIANÇA FELIZ</span>
+                    </div>
+                </div>
+
+                <div class="footer-credits">
+                    <p>Resgate de Vidas © 2026 - Todos os direitos reservados.</p>
+                    <p>Feito por GALMe</p>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/resgatedevidascriancafeliz/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="img/icon-instagram.png" alt="Instagram">
+                    </a>
+                    
+                    <a href="https://wa.me/5515988153462" target="_blank" rel="noopener noreferrer">
+                        <img src="img/icon-whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS do AOS e inicialização -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Se quiser que a animação ocorra apenas uma vez ao descer a tela, mude para false se quiser que anime sempre
+            offset: 100 // Ajuste para iniciar a animação mais cedo ou mais tarde ao rolar
+        });
+    </script>
+
+    <script src="script/js/scripts.js"></script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="https://cdn.userway.org/widget.js" data-account="Y5OvFyECWY" data-position="5"></script>
+
+
+</body>
+
+</html>

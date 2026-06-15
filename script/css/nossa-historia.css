@@ -1,0 +1,105 @@
+/* --- Estilo Geral (Desktop) --- */
+.nossa-historia {
+    padding: 60px 8%; /* Reduzi o padding para ficar menos "vazio" */
+    background-color: #fdfdfd;
+}
+
+.historia-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.historia-topo {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px; /* Reduzi o espaço entre imagem e texto */
+    align-items: center;
+}
+
+.historia-imagem img {
+    width: 100%;
+    max-width: 450px; /* Limita o tamanho da imagem */
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.historia-texto h2 {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 2.5rem; /* Fonte menor e mais elegante */
+    color: #7b0404; /* Vermelho principal */
+    margin-bottom: 15px;
+    border-left: 8px solid #7b0404; /* Barra vermelha lateral */
+    padding-left: 15px;
+    line-height: 1.1;
+}
+
+.historia-texto p {
+    font-size: 1rem; /* Fonte do texto reduzida */
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* --- Estatísticas (Stats) --- */
+.historia-stats {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 30px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #7b0404; /* Mantendo o vermelho no topo dos números */
+    transition: transform 0.3s ease;
+}
+
+.stat-card h3 {
+    font-size: 2.2rem; /* Números um pouco menores */
+    color: #7b0404;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #666;
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+
+@media (max-width: 968px) {
+    .historia-topo {
+        grid-template-columns: 1fr; /* Empilha no tablet/celular */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .historia-texto {
+        padding-left: 0;
+    }
+
+    .historia-texto h2 {
+        font-size: 2rem;
+        border-left: none; /* Remove a barra lateral no mobile */
+        border-bottom: 4px solid #7b0404; /* Coloca a barra embaixo do título */
+        display: inline-block;
+        padding-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .historia-stats {
+        grid-template-columns: 1fr; /* Stats em uma coluna no celular */
+        gap: 15px;
+    }
+
+    .nossa-historia {
+        padding: 40px 5%; /* Menos espaço lateral no celular */
+    }
+}
