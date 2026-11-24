@@ -1,0 +1,59 @@
+.resumo-publico {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem auto 2rem;
+    max-width: 960px;
+}
+.resumo-card {
+    background: #fff;
+    color: #312323;
+    border: 1px solid #e9dedc;
+    border-top: 3px solid #950d15;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+.resumo-card h3 { font-size: .95rem; margin: 0 0 .5rem; }
+.resumo-card p { font-weight: 700; margin: 0; }
+.status-publicacao[data-atualizado="true"] { color: #12633d; }
+.pix-icone { display: block; color: #11765d; font-size: 2.2rem; }
+.btn-copiar:disabled { opacity: .55; cursor: default; }
+.chave-pix { overflow-wrap: anywhere; }
+.link-ong { color: #850c15; font-weight: 700; text-decoration: underline; }
+.visita-footer {
+    align-self: start;
+    background: #fff;
+    color: #302324;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+.visita-footer h3 { margin: 0 0 .5rem; }
+.visita-footer p { margin: 0 0 .9rem; }
+.visita-footer a {
+    display: inline-block;
+    background: #166344;
+    color: #fff;
+    border-radius: 6px;
+    padding: .65rem .8rem;
+    font-weight: 700;
+}
+.rodape-visita { background: #7d0a12; padding: 1.5rem; }
+.rodape-visita .visita-footer { max-width: 960px; margin: auto; }
+.imagem-publicacao { margin: 2rem auto; max-width: 850px; text-align: center; }
+.imagem-publicacao img { max-width: 100%; height: auto; border-radius: 8px; }
+.imagem-publicacao figcaption { margin-top: .5rem; }
+
+.footer-info > .visita-footer {
+    margin-top: 1rem;
+    max-width: 29rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .main-footer .footer-info,
+    .main-footer .footer-form {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+}

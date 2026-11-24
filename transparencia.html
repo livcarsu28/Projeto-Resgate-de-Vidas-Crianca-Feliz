@@ -14,6 +14,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/nossa-historia.png" type="image/x-icon">
     <link rel="stylesheet" href="script/css/header.css">
+    <link rel="stylesheet" href="script/css/footer.css">
     <style>
         /* --- Variáveis de Cor (Facilita a manutenção) --- */
         :root {
@@ -38,14 +39,13 @@
             background-color: var(--cor-fundo);
             color: var(--cor-texto);
             line-height: 1.6;
-            padding-bottom: 60px;
             font-family: 'Montserrat', sans-serif;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 20px clamp(40px, 6vw, 80px);
         }
 
         /* --- Cabeçalho da Página --- */
@@ -295,6 +295,7 @@
     }
 }
     </style>
+    <link rel="stylesheet" href="script/css/institucional.css">
 </head>
 <body>
 
@@ -319,15 +320,17 @@
         </button>
 
         <!-- Navegação Unificada -->
-        <nav id="secoes" class="nav-menu">
-        <ul class="nav-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="doacao.html">Doação</a></li>
-            <li class="item-doar">
-                <a href="doacao.html" class="btn-doar">Faça sua doação</a>
-            </li>
-        </ul>
-</nav>
+        <nav id="secoes" class="nav-menu" aria-label="Menu principal">
+            <ul class="nav-links">
+                <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
+                <li><a href="index.html#nossa-historia">História</a></li>
+                <li><a href="index.html#atividades">Atividades</a></li>
+                <li><a href="index.html#apoiar">Como Apoiar</a></li>
+                <li><a href="index.html#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li class="item-doar"><a href="doacao.html" class="btn-doar">Faça sua doação</a></li>
+            </ul>
+        </nav>
     </header>
     <section class="transparencia-header">
         <h1 class="titulo-principal">Portal da Transparência</h1>
@@ -338,91 +341,47 @@
         </p>
     </section>
 
-        <section class="painel-resumo">
-            <div class="card-info">
-                <i class="fa-solid fa-calendar-days"></i>
-                <h3>Mês de Referência</h3>
-                <p>Maio / 2026</p>
-            </div>
-            <div class="card-info">
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-                <h3>Total de Gastos</h3>
-                <p>R$15.175,90</p>
-            </div>
-            <div class="card-info">
-                <i class="fa-solid fa-shield-check"></i>
-                <h3>Status do Fechamento</h3>
-                <p class="status-conciliado">
-                    <i class="fa-solid fa-circle-check"></i> Conciliado 
-                </p>
-            </div>
-        </section>
+        <section class="resumo-publico" aria-label="Resumo financeiro publicado" data-resumo>
+    <div class="resumo-card">
+        <h3>Mês de referência</h3>
+        <p data-periodo>—</p>
+    </div>
+    <div class="resumo-card">
+        <h3>Total de gastos</h3>
+        <p data-gastos>—</p>
+    </div>
+    <div class="resumo-card">
+        <h3>Status de atualização</h3>
+        <p class="status-publicacao" data-status role="status">Carregando…</p>
+    </div>
+</section>
 
-        <section class="secao-tabela">
-            <h2 class="tabela-titulo">
-                <i class="fa-solid fa-chart-pie"></i> Destinação dos Recursos (Operação Itapetininga/SP) 
-            </h2>
-            <p class="aviso-scroll-tabela">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                Arraste a tabela para o lado para ver os valores.
-            </p>
-
-            <div class="tabela-responsiva">
+        <section class="secao-tabela" aria-labelledby="titulo-gastos">
+            <h2 class="tabela-titulo" id="titulo-gastos">Destinação dos recursos</h2>
+            <p data-status-gastos role="status">Carregando gastos por categoria…</p>
+            <div class="tabela-responsiva" data-tabela-gastos hidden>
                 <table>
                     <thead>
                         <tr>
-                            <th>Categoria de Aplicação</th>
-                            <th>O que engloba este investimento?</th>
-                            <th>Valor Alocado</th>
-                            <th>Porcentagem</th>
+                            <th scope="col">Categoria de aplicação</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">% dos gastos</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="peso-categoria">Cuidados Infantis & Higiene</td>
-                            <td>Fraldas descartáveis M/G, pomadas protetoras, lenços umedecidos, itens de higiene infantil e insumos de limpeza para a sede.</td>
-                            <td>R$6.004,86</td>
-                            <td><strong>39,6%</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="peso-categoria">Alimentação</td>
-                            <td>Alimentos secos, leite integral, proteínas (frango e carne bovina) e compra mensal de hortifrúti direto do CEASA.</td>
-                            <td>R$4.110,00</td>
-                            <td><strong>27,1%</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="peso-categoria">Manutenção da Sede</td>
-                            <td>Locação mensal do imóvel utilizado como sede do projeto (SEDNA Empreendimentos).</td>
-                            <td>R$1.625,04</td>
-                            <td><strong>10,7%</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="peso-categoria">Contas de Consumo & Serviços</td>
-                            <td>Serviços essenciais: Água (SABESP), Energia (CPFL), Internet corporativa, Telefonia e Monitoramento de Alarme.</td>
-                            <td>R$1.345,00</td>
-                            <td><strong>8,9%</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="peso-categoria">Logística e Transporte</td>
-                            <td>Combustível semanal para os veículos de apoio e coleta de doações no Posto Ipiranga.</td>
-                            <td>R$600,00</td>
-                            <td><strong>3,9%</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="peso-categoria">Pedagógico</td>
-                            <td>Materiais escolares para oficinas, resmas de papel sulfite A4, caixas de lápis de cor e materiais pedagógicos diversos (Kalunga).</td>
-                            <td>R$550,00</td>
-                            <td><strong>3,6%</strong></td>
-                        </tr>
-                    </tbody>
+                    <tbody data-linhas-gastos></tbody>
                 </table>
             </div>
         </section>
 
+        <figure class="imagem-publicacao" data-imagem-publicacao hidden>
+            <img alt="Imagem da prestação de contas publicada pela ONG" decoding="async">
+            <figcaption>Imagem complementar da prestação de contas</figcaption>
+        </figure>
+
         <section class="secao-cta-doacao">
             <h2 class="cta-titulo">AJUDE A MANTER ESTE TRABALHO VIVO</h2>
             <p class="cta-texto">
-                Como você pôde ver, o cuidado diário com dezenas de crianças exige recursos constantes. O seu apoio é o combustível que nos permite continuar transformando vidas em Itapetininga.
+                O cuidado diário com dezenas de crianças exige recursos constantes. O seu apoio é o combustível que nos permite continuar transformando vidas em Itapetininga.
             </p>
             <a href="doacao.html" class="btn-doar-urgente">
                 <i class="fa-solid fa-heart-pulse"></i> Quero Fazer uma Doação Agora
@@ -430,19 +389,91 @@
         </section>
 
     </main>
+    <footer class="main-footer" id="contato">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2 tabindex="0" class="footer-title">FALE COM A GENTE!</h2>
+                <p class="footer-desc">Juntos levaremos oportunidades para milhares de vidas de crianças e suas
+                    famílias.</p>
+                <div class="yellow-bar"></div>
+
+                <div class="contact-details">
+
+                    <div class="contact-group">
+
+                        <p>Whatsapp: (15) 98815-3462<br>
+                            resgatedevidasbr@gmail.com</p>
+                    </div>
+                </div>
+                <section class="visita-footer" aria-labelledby="visitaTitulo">
+                    <h3 id="visitaTitulo">Agendar uma visita</h3>
+                    <p>Conheça a ONG pessoalmente. Envie uma sugestão de dia e horário pelo WhatsApp e aguarde a confirmação da equipe.</p>
+                    <a href="https://wa.me/5515988153462?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20ONG.%20Dia%20sugerido%3A%20__/__/____.%20Hor%C3%A1rio%20sugerido%3A%20__%3A__.%20Voc%C3%AAs%20t%C3%AAm%20disponibilidade%3F" target="_blank" rel="noopener noreferrer">Solicitar visita pelo WhatsApp</a>
+                </section>
+            </div>
+
+            <div class="footer-form">
+                <form id="formWhatsapp">
+
+                   <label for="nome" class="sr-only">Nome completo</label>
+                    <input type="text" id="nome" placeholder="Nome completo">
+                    
+                    <label for="empresa" class="sr-only">Empresa</label>
+                    <input type="text" id="empresa" placeholder="Empresa">
+                    
+                    <label for="telefone" class="sr-only">Telefone</label>
+                    <input type="text" id="telefone" placeholder="Telefone">
+                    
+                    <label for="email" class="sr-only">E-mail</label>
+                    <input type="email" id="email" placeholder="E-mail">
+                    
+                    <label for="assunto" class="sr-only">Assunto</label>
+                    <input type="text" id="assunto" placeholder="Assunto">
+                    
+                    <label for="mensagem" class="sr-only">Mensagem</label>
+                    <textarea id="mensagem" placeholder="Escreva aqui a sua mensagem"></textarea>
+
+                    <button type="submit" class="btn-submit">
+                        Enviar mensagem
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="Logo">
+                    <div class="logo-text-footer">
+                        <span class="logo-title">RESGATE DE VIDAS</span>
+                        <span class="logo-sub">CRIANÇA FELIZ</span>
+                    </div>
+                </div>
+
+                <div class="footer-credits">
+                    <p>Resgate de Vidas © 2026 - Todos os direitos reservados.</p>
+                    <p>Feito por GALMe</p>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/resgatedevidascriancafeliz/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="img/icon-instagram.png" alt="Instagram">
+                    </a>
+                    
+                    <a href="https://wa.me/5515988153462" target="_blank" rel="noopener noreferrer">
+                        <img src="img/icon-whatsapp.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
     
-<script>
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-
-            const aberto = navMenu.classList.contains("active");
-            hamburger.setAttribute("aria-expanded", aberto);
-        });
-    }
-</script>
+<script defer src="script/js/scripts.js"></script>
+    <script type="module" src="script/js/dados-publicos.js"></script>
 </body>
 </html>

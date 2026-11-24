@@ -267,6 +267,7 @@
 }
 
     </style>
+    <link rel="stylesheet" href="script/css/institucional.css">
 </head>
 
 <body>
@@ -289,13 +290,13 @@
             <span class="line"></span>
         </button>
 
-        <nav id="secoes" class="nav-menu">
+        <nav id="secoes" class="nav-menu" aria-label="Menu principal">
             <ul class="nav-links">
-                <li><a href="index.html#sobre-nos">Sobre nós</a></li>
-                <li><a href="index.html#atividades">Atividades</a></li>
+                <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
                 <li><a href="index.html#nossa-historia">História</a></li>
+                <li><a href="index.html#atividades">Atividades</a></li>
+                <li><a href="index.html#apoiar">Como Apoiar</a></li>
                 <li><a href="index.html#galeria">Galeria</a></li>
-                <li><a href="index.html#apoiar">Como apoiar</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li class="item-doar"><a href="doacao.html" class="btn-doar">Faça sua doação</a></li>
             </ul>
@@ -328,62 +329,46 @@
         </div>
 
         <a href="transparencia.html" class="btn-conferir-gastos">
-            <i class="fa-solid fa-receipt"></i> Conferir Prestação de Contas (Maio/2026)
+            <i class="fa-solid fa-receipt"></i> Conferir prestação de contas
         </a>
     </div>
 </section>
 
             <div class="doacao-header" data-aos="fade-up">
-                <h2 tabindex="0">Transforme Vidas Hoje</h2>
+                <h2 tabindex="0">Faça uma doação</h2>
                 <p tabindex="0">A sua contribuição é o que mantém o nosso projeto vivo. Escolha a melhor forma de fazer
                     a sua doação e nos ajude a construir um futuro melhor para centenas de crianças.</p>
             </div>
 
+            <section class="resumo-publico" aria-label="Resumo financeiro publicado" data-resumo>
+    <div class="resumo-card">
+        <h3>Mês de referência</h3>
+        <p data-periodo>—</p>
+    </div>
+    <div class="resumo-card">
+        <h3>Total de gastos</h3>
+        <p data-gastos>—</p>
+    </div>
+    <div class="resumo-card">
+        <h3>Status de atualização</h3>
+        <p class="status-publicacao" data-status role="status">Carregando…</p>
+    </div>
+</section>
+
             <div class="grid-pagamentos">
-
-                <div class="card-pagamento" data-aos="zoom-in" data-aos-delay="200" tabindex="0">
-                    <h3>Doação via PIX</h3>
-                    <p>Rápido, seguro e cai na hora.</p>
-
-                    <div class="qr-code-box">
-                        <img src="img/qrcode-pix.png" alt="QR Code para doação via PIX">
-                    </div>
-
-                    <p>Ou utilize nossa chave:</p>
-                    <div class="chave-pix" id="chavePixTexto">resgatedevidascriancafelizbr@gmail.com</div>
-
-                    <button class="btn-copiar" onclick="copiarPix()">Copiar Chave PIX</button>
-                    
-                </div>
-
-                <div class="card-pagamento" data-aos="zoom-in" data-aos-delay="400" tabindex="0">
-                    <h3>Outras Formas de Doar</h3>
-
-                    <div class="dados-bancarios">
-                        <h4>Transferência Bancária</h4>
-                        <p>
-                            <strong>Banco:</strong> Santander <br>
-                            <strong>Agência:</strong> 2976<br>
-                            <strong>Conta Corrente:</strong> 03053594-3<br>
-                            <strong>CNPJ:</strong> 47.251.468/0001-12<br>
-                            <strong>Favorecido:</strong> Projeto Resgate de Vidas
-                        </p>
-
-                        <hr class="divisor">
-
-                        <h4>Doações Internacionais (EUA)</h4>
-                        <p>
-                            <strong>Bright Future Foundation</strong><br>
-                            <strong>Zelle:</strong> 415 2997545
-                        </p>
-
-                        <hr class="divisor">
-
-                        <h4>Doação de Alimentos/Roupas</h4>
-                        <p>Entregue diretamente em nossa sede física em Itapetininga-SP. (Endereço no rodapé).</p>
-                    </div>
-                </div>
-
+                <section class="card-pagamento">
+                    <span class="pix-icone" aria-hidden="true">◆</span>
+                    <h3>Doação via Pix</h3>
+                    <p>Copie a chave e use o aplicativo do seu banco para doar.</p>
+                    <p class="chave-pix" data-chave-pix role="status">Consultando chave Pix…</p>
+                    <button type="button" class="btn-copiar" data-copiar-pix disabled>Copiar chave Pix</button>
+                    <p data-retorno-pix role="status"></p>
+                </section>
+                <section class="card-pagamento">
+                    <h3>Outras formas de doar</h3>
+                    <p>A ONG recebe alimentos, roupas, materiais escolares e outros itens essenciais.</p>
+                    <a class="link-ong" href="https://wa.me/5515988153462?text=Ol%C3%A1%21%20Gostaria%20de%20combinar%20a%20entrega%20de%20uma%20doa%C3%A7%C3%A3o%20de%20alimentos%2C%20roupas%20ou%20outros%20itens." target="_blank" rel="noopener noreferrer">Combinar entrega pelo WhatsApp</a>
+                </section>
             </div>
         </section>
     </main>
@@ -397,18 +382,18 @@
                 <div class="yellow-bar"></div>
 
                 <div class="contact-details">
-                    <h3>LOCALIZADOS EM:</h3>
-                    <p>Rua Claudionor Belarminio Ferreira, 330 - Vila Mazzei - Itapetininga, SP - CEP: 18209510</p>
 
                     <div class="contact-group">
-                        <p>Estados Unidos us<br>
-                            Bright Future Foundation<br>
-                            Zelle 415 2997545</p>
 
                         <p>Whatsapp: (15) 98815-3462<br>
                             resgatedevidasbr@gmail.com</p>
                     </div>
                 </div>
+                <section class="visita-footer" aria-labelledby="visitaTitulo">
+                    <h3 id="visitaTitulo">Agendar uma visita</h3>
+                    <p>Conheça a ONG pessoalmente. Envie uma sugestão de dia e horário pelo WhatsApp e aguarde a confirmação da equipe.</p>
+                    <a href="https://wa.me/5515988153462?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20ONG.%20Dia%20sugerido%3A%20__/__/____.%20Hor%C3%A1rio%20sugerido%3A%20__%3A__.%20Voc%C3%AAs%20t%C3%AAm%20disponibilidade%3F" target="_blank" rel="noopener noreferrer">Solicitar visita pelo WhatsApp</a>
+                </section>
             </div>
 
             <div class="footer-form" data-aos="fade-left" data-aos-delay="200">
@@ -437,14 +422,6 @@
                     </button>
 
                 </form>
-            </div>
-
-            <div class="footer-map" data-aos="zoom-in" data-aos-delay="400">
-                <iframe title="Mapa de localização da sede em Itapetininga" width="100%" height="100%"
-                    style="border:0; min-height: 350px; border-radius: 8px;" loading="lazy" allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://maps.google.com/maps?q=Rua+Claudionor+Belarminio+Ferreira,+330+-+Vila+Mazzei+-+Itapetininga,+SP&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
             </div>
         </div>
 
@@ -480,44 +457,8 @@
         </div>
     </footer>
 
-    <div id="toast" class="toast">
-    ✓ Chave PIX copiada com sucesso!
-</div>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 100 });
-
-const btnCopiar = document.querySelector('.btn-copiar');
-const chavePixElemento = document.getElementById('chavePixTexto');
-const toast = document.getElementById('toast');
-
-btnCopiar.addEventListener('click', () => {
-    const textoParaCopiar = chavePixElemento.innerText;
-
-    navigator.clipboard.writeText(textoParaCopiar)
-        .then(() => {
-
-            // Toast
-            toast.classList.add('show');
-
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-
-            // Texto do botão
-            btnCopiar.innerText = 'Copiado!';
-
-            setTimeout(() => {
-                btnCopiar.innerText = 'Copiar Chave PIX';
-            }, 2000);
-
-        })
-        .catch((erro) => {
-            console.error('Falha ao copiar:', erro);
-        });
-});
-    </script>
+    <script>window.AOS?.init({ once: true, offset: 100 });</script>
     <script src="script/js/scripts.js"></script>
 
     <div vw class="enabled">
@@ -533,6 +474,7 @@ btnCopiar.addEventListener('click', () => {
 
     <script src="https://cdn.userway.org/widget.js" data-account="Y5OvFyECWY" data-position="5"></script>
 
+    <script type="module" src="script/js/dados-publicos.js"></script>
 </body>
 
 </html>
