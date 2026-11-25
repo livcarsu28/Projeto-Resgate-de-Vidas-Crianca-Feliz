@@ -35,6 +35,7 @@ function mostrarGastos(publicacao, gastos) {
     for (const gasto of gastos) {
         const linha = linhas.insertRow();
         linha.insertCell().textContent = gasto.categoria;
+        linha.insertCell().textContent = gasto.descricao || 'Despesas agrupadas nesta categoria.';
         linha.insertCell().textContent = moeda.format(gasto.total);
         linha.insertCell().textContent = publicacao.totalGastos > 0
             ? percentual.format(gasto.total / publicacao.totalGastos)
