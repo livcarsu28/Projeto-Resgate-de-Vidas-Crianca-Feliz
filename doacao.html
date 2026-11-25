@@ -266,6 +266,52 @@
     }
 }
 
+
+        .card-doacao-itens {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .card-doacao-itens h3 { margin: 0 0 .55rem; }
+        .card-doacao-itens p { margin: 0; color: #58494a; line-height: 1.55; }
+
+        .lista-doacao-itens {
+            align-self: stretch;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .55rem;
+            list-style: none;
+            margin: 1rem 0 1.25rem;
+            padding: 0;
+        }
+
+        .lista-doacao-itens li {
+            padding: .6rem .65rem;
+            border: 1px solid #ead9d6;
+            border-radius: .5rem;
+            background: #faf3f1;
+            color: #64191d;
+            font-size: .88rem;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .card-doacao-itens .botao-doacao-itens {
+            align-self: stretch;
+            margin-top: auto;
+            border-radius: .55rem;
+            background: #166344;
+            color: #fff;
+            font-weight: 700;
+            padding: .75rem 1rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .card-doacao-itens .botao-doacao-itens:hover { background: #104d35; }
+        .card-doacao-itens .botao-doacao-itens:focus-visible { outline: 2px solid #166344; outline-offset: 3px; }
     </style>
     <link rel="stylesheet" href="script/css/institucional.css">
 </head>
@@ -364,10 +410,16 @@
                     <button type="button" class="btn-copiar" data-copiar-pix disabled>Copiar chave Pix</button>
                     <p data-retorno-pix role="status"></p>
                 </section>
-                <section class="card-pagamento">
-                    <h3>Outras formas de doar</h3>
-                    <p>A ONG recebe alimentos, roupas, materiais escolares e outros itens essenciais.</p>
-                    <a class="link-ong" href="https://wa.me/5515988153462?text=Ol%C3%A1%21%20Gostaria%20de%20combinar%20a%20entrega%20de%20uma%20doa%C3%A7%C3%A3o%20de%20alimentos%2C%20roupas%20ou%20outros%20itens." target="_blank" rel="noopener noreferrer">Combinar entrega pelo WhatsApp</a>
+                <section class="card-pagamento card-doacao-itens" aria-labelledby="titulo-doacao-itens">
+                    <h3 id="titulo-doacao-itens">Outras formas de doar</h3>
+                    <p>Veja o que a ONG recebe e combine a entrega com a equipe.</p>
+                    <ul class="lista-doacao-itens">
+                        <li>Alimentos</li>
+                        <li>Roupas</li>
+                        <li>Materiais escolares</li>
+                        <li>Outros itens essenciais</li>
+                    </ul>
+                    <a class="botao-doacao-itens" href="https://wa.me/5515988153462?text=Ol%C3%A1%21%20Gostaria%20de%20combinar%20a%20entrega%20de%20uma%20doa%C3%A7%C3%A3o%20de%20alimentos%2C%20roupas%20ou%20outros%20itens." target="_blank" rel="noopener noreferrer">Combinar entrega pelo WhatsApp</a>
                 </section>
             </div>
         </section>
