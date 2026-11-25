@@ -8,11 +8,17 @@ const copiar = document.querySelector('[data-copiar-pix]');
 const retorno = document.querySelector('[data-retorno-pix]');
 let chavePublicada = '';
 
+function mensagemSemPublicacao(publicacao) {
+    return publicacao?.statusAtualizacao === 'Retirado'
+        ? 'Dados temporariamente indisponíveis'
+        : 'Aguardando publicação';
+}
+
 function mostrarResumo(publicacao) {
     const status = resumo.querySelector('[data-status]');
     const valor = publicacao?.totalGastos;
     if (!publicacao?.disponivel || typeof valor !== 'number' || !Number.isFinite(valor)) {
-        status.textContent = 'Aguardando publicação';
+        status.textContent = mensagemSemPublicacao(publicacao);
         return;
     }
     resumo.querySelector('[data-periodo]').textContent = publicacao.periodoFormatado;
@@ -24,7 +30,7 @@ function mostrarResumo(publicacao) {
 function mostrarGastos(publicacao, gastos) {
     if (!statusGastos) return;
     if (!publicacao?.disponivel) {
-        statusGastos.textContent = 'Aguardando publicação.';
+        statusGastos.textContent = mensagemSemPublicacao(publicacao);
         return;
     }
     if (!Array.isArray(gastos) || gastos.length === 0) {
