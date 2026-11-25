@@ -133,61 +133,62 @@ const imagensGaleria = [
     }
 ];
 
-const filterBtns = document.querySelectorAll(".btn-filtro");
-const galeriaGrid = document.getElementById("galeriaGrid");
+    const filterBtns = document.querySelectorAll(".btn-filtro");
+    const galeriaGrid = document.getElementById("galeriaGrid");
+    const apiGaleria = "https://financeiro-ong.onrender.com/api/site-publico/imagens";
+    const categoriaSite = {
+        projetos: "atividades", atividades: "atividades",
+        materiais: "aprendizado", aprendizado: "aprendizado",
+        doacoes: "alimentacao", alimentacao: "alimentacao",
+        eventos: "momentos", instalacoes: "momentos", geral: "momentos", momentos: "momentos"
+    };
+    let categoriaAtiva = "atividades";
+    let fotosPublicadas = [];
 
-function carregarGaleria(categoria) {
-    galeriaGrid.innerHTML = "";
+    function carregarGaleria() {
+        const fotos = [...fotosPublicadas, ...imagensGaleria].filter(foto => foto.categoria === categoriaAtiva);
+        galeriaGrid.replaceChildren(...fotos.map(foto => {
+            const item = document.createElement("div");
+            item.className = "galeria-item show";
+            const imagem = document.createElement("img");
+            imagem.src = foto.src;
+            imagem.alt = foto.alt;
+            imagem.loading = "lazy";
+            item.append(imagem);
+            return item;
+        }));
+    }
 
-    const imagensFiltradas = imagensGaleria.filter(imagem => imagem.categoria === categoria);
-
-    imagensFiltradas.forEach(imagem => {
-        galeriaGrid.innerHTML += `
-            <div class="galeria-item show">
-                <img src="${imagem.src}" alt="${imagem.alt}" loading="lazy">
-            </div>
-        `;
-    });
-}
-
-if (filterBtns.length > 0 && galeriaGrid) {
-    filterBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            filterBtns.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const categoria = btn.getAttribute("data-filter");
-            carregarGaleria(categoria);
+    if (galeriaGrid) {
+        filterBtns.forEach(botao => {
+            botao.addEventListener("click", () => {
+                filterBtns.forEach(item => item.classList.toggle("active", item === botao));
+                categoriaAtiva = botao.dataset.filter;
+                carregarGaleria();
+            });
         });
-    });
-if (filterBtns.length > 0 && galeriaGrid) {
+        carregarGaleria();
 
-    filterBtns.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-
-            filterBtns.forEach(b => b.classList.remove("active"));
-
-            btn.classList.add("active");
-
-            const categoria = btn.getAttribute("data-filter");
-
-            carregarGaleria(categoria);
-
-        });
-
-    });
-
-    carregarGaleria("atividades");
-
-}
-    // Categoria inicial
-    carregarGaleria("atividades");
-}
-
-    // ... (Aqui em baixo mantém o código do Slider Principal e do Menu Hambúrguer) ...
-
-    // (Pode manter o código do filtro da galeria intacto aqui em cima)
+        fetch(apiGaleria, { signal: AbortSignal.timeout(90000) })
+            .then(resposta => {
+                if (!resposta.ok) throw new Error("Galeria indisponível");
+                return resposta.json();
+            })
+            .then(fotos => {
+                if (!Array.isArray(fotos)) return;
+                fotosPublicadas = fotos.filter(foto => Number.isSafeInteger(foto.id) && foto.id > 0
+                    && typeof foto.categoria === "string").map(foto => {
+                    const nome = foto.categoria.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+                    return {
+                        src: apiGaleria + "/" + foto.id,
+                        alt: "Foto da ONG — " + foto.categoria,
+                        categoria: Object.hasOwn(categoriaSite, nome) ? categoriaSite[nome] : "momentos"
+                    };
+                });
+                carregarGaleria();
+            })
+            .catch(() => { /* A galeria do site segue disponível durante a inicialização do sistema. */ });
+    }
 
     const slidesWrapper = document.querySelector('.slides-wrapper');
     const dots = document.querySelectorAll('.nav-dot');
