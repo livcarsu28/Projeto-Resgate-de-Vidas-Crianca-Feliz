@@ -71,8 +71,13 @@ async function carregarDados() {
         mostrarGastos(dados.publicacao, dados.gastosPorCategoria);
         mostrarImagem(dados.imagemUrl);
         if (chave) {
-            chavePublicada = typeof dados.chavePix === 'string' ? dados.chavePix.trim() : '';
-            chave.textContent = chavePublicada || 'Chave Pix ainda não publicada.';
+            if (dados.pixTemporariamenteIndisponivel === true) {
+                chavePublicada = '';
+                chave.textContent = 'Temporariamente indisponível';
+            } else {
+                chavePublicada = typeof dados.chavePix === 'string' ? dados.chavePix.trim() : '';
+                chave.textContent = chavePublicada || 'Chave Pix ainda não publicada.';
+            }
             copiar.disabled = !chavePublicada;
         }
     } catch {
